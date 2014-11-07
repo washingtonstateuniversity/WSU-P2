@@ -298,7 +298,7 @@ class Mention_Me extends WP_Widget {
 
 		$comment_url = Mention_Me::comment_url_maybe_local( $comment );
 
-		$row .= sprintf( '<td class="text">'.__( "%s on <a href='%s' class='tooltip' title='%s'>%s</a>" , 'mentionme') . '</td></tr>', $author_html, $comment_url, attribute_escape($comment_content), $post_title );
+		$row .= sprintf( '<td class="text">'.__( "%s on <a href='%s' class='tooltip' title='%s'>%s</a>" , 'mentionme') . '</td></tr>', $author_html, $comment_url, esc_attr($comment_content), $post_title );
 		return $row;
 	}
 }
