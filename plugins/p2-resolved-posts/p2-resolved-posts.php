@@ -97,9 +97,6 @@ class P2_Resolved_Posts {
 	 * Load textdomain, register the taxonomy, etc.
 	 */
 	function action_init() {
-
-		load_plugin_textdomain( 'p2-resolved-posts', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-
 		$this->register_taxonomy();
 
 		$this->states = array(
