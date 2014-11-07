@@ -85,9 +85,6 @@ class P2 {
 	}
 
 	function init() {
-		// Load language pack
-		load_theme_textdomain( 'p2', get_template_directory() . '/languages' );
-
 		// Set up the AJAX read handler
 		add_feed( 'p2.ajax', array( $this, 'ajax_read' ) );
 	}
