@@ -8,12 +8,13 @@ Version: 1.0.5
 Author URI: http://blog.webzappr.com
 */
 class Mention_Me extends WP_Widget {
+
 	function Mention_Me() { 
 		$this->WP_Widget( false, __('Mention Me', 'mentionme'), array('description' => __('Recent mentions of your name (@replies)', 'mentionme')));
 		
-		add_action( 'comment_post', array(&$this, 'flush_widget_cache') );
-		add_action( 'wp_set_comment_status', array(&$this, 'flush_widget_cache') );
-		add_action( 'save_post', array(&$this, 'flush_widget_cache') );
+		add_action( 'comment_post', array( $this, 'flush_widget_cache') );
+		add_action( 'wp_set_comment_status', array( $this, 'flush_widget_cache') );
+		add_action( 'save_post', array( $this, 'flush_widget_cache') );
 		
 		$this->default_num_to_show = 3;
 		$this->default_avatar_size = 32;
@@ -40,6 +41,7 @@ class Mention_Me extends WP_Widget {
 			'avatar_size' => '32',
 		);
 		$instance = wp_parse_args( $instance, $defaults );
+
 		$title = esc_attr( $instance['title'] );
 		$title_id = $this->get_field_id('title');
 		$title_name = $this->get_field_name('title');
@@ -308,5 +310,3 @@ function load_mention_me_widget() {
 	register_widget( 'Mention_Me' );
 }
 add_action( 'widgets_init', 'load_mention_me_widget' );
-
-?>
