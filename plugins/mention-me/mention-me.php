@@ -188,7 +188,9 @@ class Mention_Me extends WP_Widget {
 	function recent_mentions( $num_to_show, $show_also_post_followups=false, $show_also_comment_followups=false ) {
 		global $wpdb, $current_user;
 
+		// @todo look into this :)
 		//$cache = wp_cache_get( 'p2_recent_mentions_' . $current_user->ID, 'widget' );
+		$cache = false;
 		if ( !is_array( $cache ) ) {
 			$cache = array();
 		}
