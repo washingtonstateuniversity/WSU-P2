@@ -6,11 +6,8 @@
 // Include the Mention Me Widget from Thorston Ott
 require_once( get_template_directory() . '/plugins/mention-me/mention-me.php' );
 
-// Include the P2 Resolved Posts plugin from Automattic (via Daniel Bachhuber, via Andrew Nacing)
+// Include the P2 Resolved Posts plugin from Automattic (via Daniel Bachhuber, via Andrew Nacin)
 require_once( get_template_directory() . '/plugins/p2-resolved-posts/p2-resolved-posts.php' );
-
-// Include the WP By Email plugin from Daniel Bachhuber
-require_once( get_template_directory() . '/plugins/wp-by-email/wp-by-email.php' );
 
 require_once( get_template_directory() . '/inc/utils.php' );
 
