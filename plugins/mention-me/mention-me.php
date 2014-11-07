@@ -21,7 +21,7 @@ class Mention_Me extends WP_Widget {
 	
 	function flush_widget_cache() {
 		global $current_user;
-		$users = get_users_of_blog();
+		$users = get_users();
 		// wipe caches for all users
 		foreach ( $users as $user ) {
  			wp_cache_delete( 'p2_recent_mentions_' . $user->ID, 'widget' ); 
@@ -166,7 +166,7 @@ class Mention_Me extends WP_Widget {
 	
 	function p2_get_at_name_map_ids() {
 		global $wpdb;
-		$users = get_users_of_blog();
+		$users = get_users();
 		// get display names (can take out if you only want to handle nicenames)
 		foreach ( $users as $user ) {
  			$name_map["@$user->display_name"] = $user->ID;
