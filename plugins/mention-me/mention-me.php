@@ -122,7 +122,7 @@ class Mention_Me extends WP_Widget {
 		
 		$mentions = $this->recent_mentions( $num_to_show, $show_also_post_followups, $show_also_comment_followups );
 		
-		echo $before_widget . $before_title . wp_specialchars( $title ) . $after_title;
+		echo $before_widget . $before_title . esc_html( $title ) . $after_title;
 ?>
 		<table class='p2-recent-mentions' cellspacing='0' cellpadding='0' border='0' avatar="<?php echo esc_attr($avatar_size); ?>">
 		<?php foreach( $mentions as $comment ):
@@ -288,7 +288,7 @@ class Mention_Me extends WP_Widget {
 		$row  = "<tr>";
 		if ( !$no_avatar) $row .= "<td title='$author_name' class='avatar' style='height: ${avatar_size}px; width: ${avatar_size}px'>" . $avatar . '</td>';
 
-		$post_title = wp_specialchars( strip_tags( get_the_title( $comment->post_id ) ) );
+		$post_title = esc_html( strip_tags( get_the_title( $comment->post_id ) ) );
 		$excerpt = wp_html_excerpt( $post_title, 30 );
 		if ( $post_title != $excerpt ) $post_title = $excerpt.'&hellip;';
 
