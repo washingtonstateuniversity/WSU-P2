@@ -784,4 +784,4 @@ class P2_Resolved_Posts {
 function P2ResolvedPosts() {
 	return P2_Resolved_Posts::instance();
 }
-add_action( 'plugins_loaded', 'P2ResolvedPosts' );
+add_action( 'after_setup_theme', 'P2ResolvedPosts', 9 );
