@@ -3,6 +3,9 @@
  * @package P2
  */
 
+// Include the Mention Me Widget from Thorston Ott
+require_once( get_template_directory() . '/plugins/mention-me/mention-me.php' );
+
 require_once( get_template_directory() . '/inc/utils.php' );
 
 p2_maybe_define( 'P2_INC_PATH', get_template_directory()     . '/inc' );
