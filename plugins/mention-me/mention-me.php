@@ -29,9 +29,17 @@ class Mention_Me extends WP_Widget {
 		wp_cache_delete( 'p2_recent_mentions_' . $current_user->ID, 'widget' ); 
 
 	}
-	
+
 	
 	function form( $instance ) {
+		$defaults = array(
+			'title' => '',
+			'num_to_show' => 5,
+			'show_also_post_followups' => 0,
+			'show_also_comment_followups' => 0,
+			'avatar_size' => '32',
+		);
+		$instance = wp_parse_args( $instance, $defaults );
 		$title = esc_attr( $instance['title'] );
 		$title_id = $this->get_field_id('title');
 		$title_name = $this->get_field_name('title');
