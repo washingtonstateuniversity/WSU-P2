@@ -382,7 +382,7 @@ class P2_Resolved_Posts {
 				'nonce'         => wp_create_nonce( 'p2-resolve-' . $post_id ),
 				'mark'          => $next_state,
 			);
-		$link = add_query_arg( $args, get_site_url() );
+		$link = add_query_arg( $args, get_site_url( '/' ) );
 		return $link;
 	}
 
